@@ -1,3 +1,5 @@
+AI SLOP
+
 # Astro Starter Kit: Basics
 
 ```sh

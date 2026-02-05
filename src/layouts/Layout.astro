@@ -1,14 +1,121 @@
 ---
 import '../styles/global.css';
-const { title } = Astro.props;
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Computer Engineering Student | Developer | Problem Solver" } = Astro.props;
 ---
 
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Deniz" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    
     <title>{title}</title>
   </head>
-  <body class="bg-gray-900 text-white font-sans">
-    <slot /> </body>
+  
+  <body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-[var(--color-border)]" style="border-radius: 0;">
+      <div class="max-w-6xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <a href="#hero" class="text-xl font-bold gradient-text">
+            Deniz
+          </a>
+          
+          <!-- Nav Links -->
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+          
+          <!-- CTA Button -->
+          <a href="/resume.pdf" download class="btn-primary text-sm py-2 px-4 hidden sm:inline-flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7,10 12,15 17,10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Resume
+          </a>
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400 hover:text-white transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-[var(--color-border)] pt-4">
+          <div class="flex flex-col gap-4">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="/resume.pdf" download class="btn-primary text-sm py-2 px-4 text-center mt-2">
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-[var(--color-border)] py-8">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <p class="text-[var(--color-text-muted)]">
+          © 2026 Deniz. Built with 
+          <span class="gradient-text">Astro</span> & 
+          <span class="gradient-text">Tailwind CSS</span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuBtn?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+      });
+      
+      // Close menu when clicking a link
+      mobileMenu?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu?.classList.add('hidden');
+        });
+      });
+    </script>
+  </body>
 </html>

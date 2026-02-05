@@ -1,36 +1,578 @@
 ---
-import MainLayout from '../layouts/Layout.astro';
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<MainLayout title="My Portfolio">
-  <div class="max-w-4xl mx-auto p-10">
-    <header class="text-center py-20">
-      <h1 class="text-5xl font-bold mb-4 text-blue-400">
-        Hello, I'm Deniz
-      </h1>
-      <p class="text-xl text-gray-300 mb-8">
-        Developer | Designer | Creator
-      </p>
-      <a href="../src/assets/ÖzgürDenizGençCV.pdf" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-bold transition">
-        Download CV
-      </a>
-    </header>
-
-    <section>
-      <h2 class="text-3xl font-bold mb-6 border-b border-gray-700 pb-2">Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-gray-800 p-6 rounded-xl hover:shadow-xl transition border border-gray-700">
-          <h3 class="text-xl font-bold mb-2">Project One</h3>
-          <p class="text-gray-400 mb-4">A cool app built with Astro and Tailwind.</p>
-          <span class="text-blue-400 text-sm">View Code &rarr;</span>
+<Layout title="Deniz | Computer Engineering Student">
+  <!-- Hero Section -->
+  <section id="hero" class="section min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Background Glows -->
+    <div class="bg-glow bg-glow-purple absolute top-1/4 -left-1/4"></div>
+    <div class="bg-glow bg-glow-cyan absolute bottom-1/4 -right-1/4"></div>
+    
+    <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+      <div class="animate-fade-in">
+        <!-- Profile Image Placeholder -->
+        <div class="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 p-1 animate-pulse-glow">
+          <div class="w-full h-full rounded-full bg-[var(--color-bg-dark)] flex items-center justify-center text-4xl">
+            👨‍💻
+          </div>
         </div>
-         <div class="bg-gray-800 p-6 rounded-xl hover:shadow-xl transition border border-gray-700">
-          <h3 class="text-xl font-bold mb-2">Project Two</h3>
-          <p class="text-gray-400 mb-4">Another amazing project description.</p>
-          <span class="text-blue-400 text-sm">View Code &rarr;</span>
+        
+        <p class="text-[var(--color-primary-light)] font-medium mb-4 tracking-wider uppercase text-sm">
+          Computer Engineering Student
+        </p>
+        
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">
+          Hi, I'm <span class="gradient-text">Deniz</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-10">
+          Passionate about building innovative software solutions and exploring the intersection of 
+          <span class="text-[var(--color-accent-cyan)]">technology</span> and 
+          <span class="text-[var(--color-accent-purple)]">creativity</span>
+        </p>
+        
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/resume.pdf" download class="btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7,10 12,15 17,10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download CV
+          </a>
+          <a href="#contact" class="btn-secondary">
+            Get In Touch
+          </a>
         </div>
       </div>
-    </section>
-  </div>
-</MainLayout>
+    </div>
+    
+
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- About Image/Visual -->
+        <div class="relative">
+          <div class="aspect-square rounded-2xl glass p-8 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10"></div>
+            <div class="relative z-10 h-full flex flex-col justify-center items-center text-center">
+              <div class="text-6xl mb-4">🚀</div>
+              <h3 class="text-2xl font-bold gradient-text mb-2">Building the Future</h3>
+              <p class="text-[var(--color-text-secondary)]">One line of code at a time</p>
+            </div>
+          </div>
+          <!-- Decorative Element -->
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl -z-10 opacity-50 blur-xl"></div>
+        </div>
+
+        <!-- About Content -->
+        <div>
+          <p class="text-[var(--color-primary-light)] font-medium mb-2 tracking-wider uppercase text-sm">About Me</p>
+          <h2 class="section-title">Passionate Developer & <span class="gradient-text">Problem Solver</span></h2>
+          
+          <p class="text-[var(--color-text-secondary)] mb-6 text-lg leading-relaxed">
+            I'm a Computer Engineering student with a strong passion for software development 
+            and innovative technology solutions. I love tackling complex problems and turning 
+            ideas into functional, elegant applications.
+          </p>
+          
+          <p class="text-[var(--color-text-secondary)] mb-8 leading-relaxed">
+            When I'm not coding, you'll find me exploring new technologies, contributing to 
+            open-source projects, or learning about the latest developments in AI and machine learning. 
+            I believe in continuous learning and pushing the boundaries of what's possible.
+          </p>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-3 gap-4">
+            <div class="glass p-4 text-center rounded-xl">
+              <div class="text-3xl font-bold gradient-text">10+</div>
+              <div class="text-sm text-[var(--color-text-muted)]">Projects</div>
+            </div>
+            <div class="glass p-4 text-center rounded-xl">
+              <div class="text-3xl font-bold gradient-text">5+</div>
+              <div class="text-sm text-[var(--color-text-muted)]">Technologies</div>
+            </div>
+            <div class="glass p-4 text-center rounded-xl">
+              <div class="text-3xl font-bold gradient-text">3+</div>
+              <div class="text-sm text-[var(--color-text-muted)]">Years Coding</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section relative">
+    <div class="bg-glow bg-glow-primary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+    
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <p class="text-[var(--color-primary-light)] font-medium mb-2 tracking-wider uppercase text-sm">Skills & Technologies</p>
+        <h2 class="section-title">My <span class="gradient-text">Tech Stack</span></h2>
+        <p class="section-subtitle mx-auto">
+          Technologies and tools I use to bring ideas to life
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Programming Languages -->
+        <div class="glass glass-hover p-8 rounded-2xl">
+          <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center text-2xl mb-6">
+            💻
+          </div>
+          <h3 class="text-xl font-bold mb-4">Languages</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">TypeScript</span>
+            <span class="skill-badge">C++</span>
+            <span class="skill-badge">Java</span>
+            <span class="skill-badge">SQL</span>
+          </div>
+        </div>
+
+        <!-- Frameworks & Libraries -->
+        <div class="glass glass-hover p-8 rounded-2xl">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-2xl mb-6">
+            ⚡
+          </div>
+          <h3 class="text-xl font-bold mb-4">Frameworks</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge">React</span>
+            <span class="skill-badge">Node.js</span>
+            <span class="skill-badge">Astro</span>
+            <span class="skill-badge">Tailwind CSS</span>
+            <span class="skill-badge">Express</span>
+            <span class="skill-badge">Django</span>
+          </div>
+        </div>
+
+        <!-- Tools & Platforms -->
+        <div class="glass glass-hover p-8 rounded-2xl">
+          <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center text-2xl mb-6">
+            🛠️
+          </div>
+          <h3 class="text-xl font-bold mb-4">Tools & Platforms</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge">Git</span>
+            <span class="skill-badge">Docker</span>
+            <span class="skill-badge">Linux</span>
+            <span class="skill-badge">VS Code</span>
+            <span class="skill-badge">Figma</span>
+            <span class="skill-badge">AWS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-[var(--color-primary-light)] font-medium mb-2 tracking-wider uppercase text-sm">Work Experience</p>
+        <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
+        <p class="section-subtitle mx-auto">
+          Professional experiences that shaped my career
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto">
+        <!-- Experience Item 1 -->
+        <div class="timeline-item">
+          <div class="glass p-6 rounded-xl ml-4">
+            <div class="flex flex-wrap items-center gap-4 mb-3">
+              <h3 class="text-xl font-bold">Software Developer Intern</h3>
+              <span class="text-sm px-3 py-1 bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] rounded-full">
+                Summer 2025
+              </span>
+            </div>
+            <p class="text-[var(--color-accent-cyan)] font-medium mb-3">Tech Company Inc.</p>
+            <p class="text-[var(--color-text-secondary)]">
+              Developed and maintained web applications using React and Node.js. 
+              Collaborated with cross-functional teams to deliver features on schedule. 
+              Improved application performance by 30% through code optimization.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Item 2 -->
+        <div class="timeline-item">
+          <div class="glass p-6 rounded-xl ml-4">
+            <div class="flex flex-wrap items-center gap-4 mb-3">
+              <h3 class="text-xl font-bold">Research Assistant</h3>
+              <span class="text-sm px-3 py-1 bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] rounded-full">
+                2024 - Present
+              </span>
+            </div>
+            <p class="text-[var(--color-accent-cyan)] font-medium mb-3">University AI Lab</p>
+            <p class="text-[var(--color-text-secondary)]">
+              Conducting research on machine learning algorithms for computer vision applications. 
+              Published findings in academic conferences and contributed to open-source projects.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">TensorFlow</span>
+              <span class="project-tag">OpenCV</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Item 3 -->
+        <div class="timeline-item">
+          <div class="glass p-6 rounded-xl ml-4">
+            <div class="flex flex-wrap items-center gap-4 mb-3">
+              <h3 class="text-xl font-bold">Freelance Developer</h3>
+              <span class="text-sm px-3 py-1 bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] rounded-full">
+                2023 - 2024
+              </span>
+            </div>
+            <p class="text-[var(--color-accent-cyan)] font-medium mb-3">Self-Employed</p>
+            <p class="text-[var(--color-text-secondary)]">
+              Built custom websites and web applications for small businesses and startups. 
+              Managed client relationships and delivered projects within budget and timeline.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="project-tag">HTML/CSS</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">WordPress</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section relative">
+    <div class="bg-glow bg-glow-purple absolute top-0 right-0"></div>
+    <div class="bg-glow bg-glow-cyan absolute bottom-0 left-0"></div>
+    
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <p class="text-[var(--color-primary-light)] font-medium mb-2 tracking-wider uppercase text-sm">Portfolio</p>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        <p class="section-subtitle mx-auto">
+          A selection of projects I've worked on
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Project 1 -->
+        <div class="glass glass-hover rounded-2xl overflow-hidden group">
+          <div class="aspect-video bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center text-6xl">
+            🎮
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 group-hover:text-[var(--color-primary-light)] transition">
+              Game Engine Project
+            </h3>
+            <p class="text-[var(--color-text-secondary)] mb-4">
+              A custom 2D game engine built from scratch using C++ and OpenGL. 
+              Features include physics simulation, sprite rendering, and audio management.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="project-tag">C++</span>
+              <span class="project-tag">OpenGL</span>
+              <span class="project-tag">SDL2</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="#" class="text-[var(--color-primary-light)] hover:underline flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                GitHub
+              </a>
+              <a href="#" class="text-[var(--color-accent-cyan)] hover:underline flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass glass-hover rounded-2xl overflow-hidden group">
+          <div class="aspect-video bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center text-6xl">
+            🤖
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 group-hover:text-[var(--color-primary-light)] transition">
+              AI Chat Application
+            </h3>
+            <p class="text-[var(--color-text-secondary)] mb-4">
+              A real-time chat application powered by AI. Features natural language processing, 
+              sentiment analysis, and smart response suggestions.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">React</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="#" class="text-[var(--color-primary-light)] hover:underline flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                GitHub
+              </a>
+              <a href="#" class="text-[var(--color-accent-cyan)] hover:underline flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass glass-hover rounded-2xl overflow-hidden group">
+          <div class="aspect-video bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center text-6xl">
+            📊
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 group-hover:text-[var(--color-primary-light)] transition">
+              Data Visualization Dashboard
+            </h3>
+            <p class="text-[var(--color-text-secondary)] mb-4">
+              Interactive dashboard for visualizing complex datasets. 
+              Features real-time updates, multiple chart types, and data export functionality.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">D3.js</span>
+              <span class="project-tag">Node.js</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="#" class="text-[var(--color-primary-light)] hover:underline flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                GitHub
+              </a>
+              <a href="#" class="text-[var(--color-accent-cyan)] hover:underline flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="glass glass-hover rounded-2xl overflow-hidden group">
+          <div class="aspect-video bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center text-6xl">
+            📱
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 group-hover:text-[var(--color-primary-light)] transition">
+              Mobile Task Manager
+            </h3>
+            <p class="text-[var(--color-text-secondary)] mb-4">
+              A cross-platform mobile app for task management with cloud sync, 
+              push notifications, and collaborative features.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="project-tag">React Native</span>
+              <span class="project-tag">Firebase</span>
+              <span class="project-tag">Redux</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="#" class="text-[var(--color-primary-light)] hover:underline flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                GitHub
+              </a>
+              <a href="#" class="text-[var(--color-accent-cyan)] hover:underline flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-[var(--color-primary-light)] font-medium mb-2 tracking-wider uppercase text-sm">Education</p>
+        <h2 class="section-title">Academic <span class="gradient-text">Background</span></h2>
+      </div>
+
+      <div class="max-w-3xl mx-auto">
+        <div class="glass p-8 rounded-2xl">
+          <div class="flex flex-col md:flex-row md:items-start gap-6">
+            <!-- University Logo Placeholder -->
+            <div class="w-20 h-20 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-3xl flex-shrink-0">
+              🎓
+            </div>
+            
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-4 mb-2">
+                <h3 class="text-2xl font-bold">Bachelor of Science in Computer Engineering</h3>
+              </div>
+              <p class="text-[var(--color-accent-cyan)] font-medium text-lg mb-2">University Name</p>
+              <p class="text-[var(--color-text-muted)] mb-4">Expected Graduation: 2026</p>
+              
+              <p class="text-[var(--color-text-secondary)] mb-6">
+                Focused on software engineering, algorithms, and artificial intelligence. 
+                Maintaining a strong academic record while actively participating in coding 
+                competitions and hackathons.
+              </p>
+
+              <div>
+                <h4 class="font-semibold mb-3 text-[var(--color-text-primary)]">Relevant Coursework:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="skill-badge">Data Structures</span>
+                  <span class="skill-badge">Algorithms</span>
+                  <span class="skill-badge">Operating Systems</span>
+                  <span class="skill-badge">Database Systems</span>
+                  <span class="skill-badge">Computer Networks</span>
+                  <span class="skill-badge">Machine Learning</span>
+                  <span class="skill-badge">Software Engineering</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section relative">
+    <div class="bg-glow bg-glow-primary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10"></div>
+    
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <p class="text-[var(--color-primary-light)] font-medium mb-2 tracking-wider uppercase text-sm">Contact</p>
+        <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+        <p class="section-subtitle mx-auto">
+          Have a project in mind or just want to say hi? Feel free to reach out!
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div class="glass p-8 rounded-2xl">
+          <h3 class="text-xl font-bold mb-6">Send a Message</h3>
+          <form action="#" method="POST" class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium mb-2">Name</label>
+              <input type="text" id="name" name="name" required class="form-input" placeholder="Your Name">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2">Email</label>
+              <input type="email" id="email" name="email" required class="form-input" placeholder="your@email.com">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium mb-2">Message</label>
+              <textarea id="message" name="message" rows="5" required class="form-input resize-none" placeholder="Your message..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info & Social Links -->
+        <div class="flex flex-col justify-center">
+          <div class="mb-10">
+            <h3 class="text-xl font-bold mb-6">Get in Touch</h3>
+            <div class="space-y-4">
+              <a href="mailto:deniz@example.com" class="flex items-center gap-4 text-[var(--color-text-secondary)] hover:text-white transition group">
+                <div class="social-link group-hover:border-[var(--color-primary)] group-hover:text-[var(--color-primary)]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <span>deniz@example.com</span>
+              </a>
+              <a href="tel:+901234567890" class="flex items-center gap-4 text-[var(--color-text-secondary)] hover:text-white transition group">
+                <div class="social-link group-hover:border-[var(--color-primary)] group-hover:text-[var(--color-primary)]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <span>+90 123 456 7890</span>
+              </a>
+              <div class="flex items-center gap-4 text-[var(--color-text-secondary)]">
+                <div class="social-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <span>Istanbul, Turkey</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Follow Me</h3>
+            <div class="flex gap-4">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                </svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
