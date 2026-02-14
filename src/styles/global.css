@@ -44,6 +44,35 @@
   --transition-slow: 0.5s ease;
 }
 
+/* Light Mode */
+[data-theme="light"] {
+  --color-primary: #0284c7;
+  --color-primary-light: #0369a1;
+  --color-primary-dark: #075985;
+
+  --color-accent-cyan: #0891b2;
+  --color-accent-purple: #0e7490;
+  --color-accent-pink: #06b6d4;
+
+  --color-bg-dark: #f8fafc;
+  --color-bg-card: rgba(255, 255, 255, 0.8);
+  --color-bg-card-hover: rgba(241, 245, 249, 0.9);
+
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+
+  --color-border: rgba(148, 163, 184, 0.3);
+  --color-border-hover: rgba(2, 132, 199, 0.5);
+
+  --gradient-primary: linear-gradient(135deg, #0284c7 0%, #0891b2 50%, #0e7490 100%);
+  --gradient-text: linear-gradient(90deg, #0284c7, #0891b2, #0e7490);
+  --gradient-glow: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.1) 0%, transparent 60%);
+
+  --shadow-glow: 0 0 40px rgba(2, 132, 199, 0.15);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
 /* ========================================
    BASE STYLES
    ======================================== */
@@ -64,6 +93,22 @@ body {
 ::selection {
   background-color: var(--color-primary);
   color: white;
+}
+
+/* ========================================
+   FOCUS STYLES (Accessibility)
+   ======================================== */
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 /* ========================================
@@ -162,11 +207,6 @@ body {
 /* ========================================
    SECTION STYLES
    ======================================== */
-
-.section {
-  padding: 100px 0;
-  position: relative;
-}
 
 .section-title {
   font-size: 2.5rem;
@@ -364,6 +404,39 @@ body {
 }
 
 /* ========================================
+   SCROLL-TRIGGERED SECTION ANIMATIONS
+   ======================================== */
+
+.section {
+  padding: 100px 0;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-fade-in,
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-scroll-down {
+    animation: none;
+  }
+}
+
+/* ========================================
    NAV STYLES
    ======================================== */
 
@@ -455,4 +528,53 @@ body {
   border-radius: 50px;
   font-size: 0.75rem;
   color: var(--color-primary-light);
+}
+
+/* ========================================
+   GITHUB CHART
+   ======================================== */
+
+.github-chart {
+  transition: filter var(--transition-normal);
+}
+
+[data-theme="light"] .github-chart {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* ========================================
+   THEME TOGGLE
+   ======================================== */
+
+#theme-toggle {
+  background: var(--color-bg-card);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+#theme-toggle:hover {
+  color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+/* ========================================
+   LIGHT MODE ADJUSTMENTS
+   ======================================== */
+
+[data-theme="light"] .glass {
+  background: var(--color-bg-card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .bg-glow {
+  opacity: 0.08;
+}
+
+[data-theme="light"] .btn-primary {
+  box-shadow: 0 4px 20px rgba(2, 132, 199, 0.25);
+}
+
+[data-theme="light"] .btn-primary:hover {
+  box-shadow: 0 8px 30px rgba(2, 132, 199, 0.35);
 }
